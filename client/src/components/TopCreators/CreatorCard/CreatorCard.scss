@@ -1,0 +1,147 @@
+@import "../../../sass/all";
+
+.card-creators-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: rem(20);
+  padding: rem(20);
+  min-width: 100%;
+  position: relative;
+
+  background: $background-secondary;
+  transition: all 0.23s ease 0s;
+
+  &:hover {
+    .card-creators-body__rang {
+      color: $red-accent;
+      border: 1px solid $red-accent;
+    }
+
+    .card-creators-body__progress > span:nth-child(2) {
+      color: $call-to-action;
+    }
+  }
+
+  @media screen and (min-width: 890px) {
+    &:hover {
+      scale: 1.05;
+      cursor: pointer;
+      box-shadow: 0px 0px 20px #a159ff2b;
+      border-bottom: 1px solid $call-to-action;
+    }
+  }
+
+  @media screen and (max-width: 890px) {
+    flex-direction: row;
+    min-height: rem(100);
+
+    @for $i from 7 through 12 {
+      &:nth-child(#{$i}) {
+        display: none;
+      }
+    }
+  }
+  @media screen and (max-width: 600px) {
+    @for $i from 6 through 6 {
+      &:nth-child(#{$i}) {
+        display: none;
+      }
+    }
+  }
+  @media screen and (max-width: 374px) {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  &__rang {
+    font-family: $font-family;
+    position: absolute;
+    top: rem(14);
+    left: rem(14);
+    background: $background;
+    border-radius: 50%;
+    @include adaptiv-value("width", 30, 28);
+    @include adaptiv-value("height", 30, 28);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease 0s;
+
+    font-weight: 400;
+    @include adaptiv-value("font-size", 16, 14);
+    color: $caption-and-label-text;
+
+    > span {
+      margin-bottom: 1.5px;
+    }
+  }
+
+  &__avatar {
+    border-radius: 50%;
+    max-width: rem(120);
+    max-height: rem(120);
+    overflow: hidden;
+    margin-bottom: rem(20);
+
+    @media screen and (max-width: 890px) {
+      max-width: rem(60);
+      margin-bottom: 0;
+      max-height: rem(60);
+      flex: 1 0 100%;
+    }
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    @include adaptiv-value("row-gap", 5, 0);
+
+    @media screen and (max-width: 890px) {
+      @include adaptiv-value("margin-left", 20, 5);
+
+      > div:first-child {
+        text-align: left;
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__nick-name {
+    margin-bottom: rem(8);
+    font-weight: 600;
+    @include adaptiv-value("font-size", 22, 20);
+    text-transform: capitalize;
+    text-align: center;
+  }
+
+  &__progress {
+    white-space: nowrap;
+    > span:first-child {
+      font-weight: 400;
+      @include adaptiv-value("font-size", 16, 14);
+      text-align: right;
+      color: $caption-and-label-text;
+    }
+
+    > span:nth-child(2) {
+      font-family: $font-family;
+      font-weight: 400;
+      @include adaptiv-value("font-size", 16, 14);
+      line-height: 140%;
+      transition: all 0.23s ease 0s;
+    }
+  }
+}

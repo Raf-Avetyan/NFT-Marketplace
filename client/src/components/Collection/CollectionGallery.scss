@@ -1,0 +1,110 @@
+@import "../../sass/all";
+
+.collection-body {
+  @include adaptiv-value("max-width", 330, 315);
+  flex: 1 1 33.333%;
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    row-gap: rem(15);
+  }
+  .top-collection-body__big-img {
+    border-radius: rem(20);
+    overflow: hidden;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: all .23s ease 0s;
+
+      &:hover {
+        scale: 1.04;
+      }
+    }
+  }
+
+  .top-collection-body__bottom {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    flex-wrap: nowrap;
+    column-gap: rem(15);
+
+    > div {
+      border-radius: rem(20);
+      overflow: hidden;
+      flex: 1 1 rem(100);
+
+      > img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        transition: all .23s ease 0s;
+
+        &:hover {
+          scale: 1.04;
+        }
+      }
+    }
+  }
+
+  .bottom-collection-top-body__others {
+    background-color: $call-to-action;
+    font-family: var(--font-family);
+    font-weight: 700;
+    @include adaptiv-value("font-size", 22, 16);
+    text-transform: capitalize;
+    text-align: center;
+    cursor: pointer;
+    transition: all .23s ease 0s;
+
+    &:hover {
+      color: $gold-accent;
+      background-color: #a159ff62;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .collection-body__bottom {
+    margin-top: rem(15);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    row-gap: rem(10);
+    .bottom-collection-body__title {
+      font-weight: 600;
+      font-size: rem(22);
+      line-height: 140%;
+      text-transform: capitalize;
+    }
+
+    .bottom-collection-body__user {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      column-gap: rem(12);
+    }
+
+    .bottom-collection-body__nick {
+      overflow: hidden;
+      > img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .bottom-collection-body__nickName {
+      font-weight: 400;
+      font-size: rem(16);
+      line-height: 140%;
+    }
+  }
+}

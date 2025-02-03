@@ -1,0 +1,75 @@
+@import "../../sass/all";
+
+.join-form {
+  @include adaptiv-value("margin-top", 40, 0);
+  @include adaptiv-value("margin-bottom", 80, 40); 
+  .join-form > &__container {
+    max-width: rem(1050);
+    box-sizing: border-box;
+    padding-inline: rem(20);
+
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    @include adaptiv-value("column-gap", 80, 30);
+    row-gap: rem(30);
+    background-color: $background-secondary;
+    @include adaptiv-value("padding-block", 60, 40);
+    @include adaptiv-value("padding-inline", 60, 30);
+    border-radius: rem(20);
+
+    @media screen and (max-width: 650px) {
+      flex-wrap: wrap;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+    }
+  }
+
+  &__image {
+    flex: 0 0 50%;
+    border-radius:rem(20);
+    overflow: hidden;
+
+    @media screen and (max-width: 650px) {
+      flex: 1 1 255px;
+    }
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: all .23s ease 0s;
+
+      &:hover {
+        scale: 1.03;
+      }
+    }
+  }
+
+  //   &__body {
+  //   }
+}
+.body-join-form {
+  align-self: center;
+  max-width: rem(425);
+
+  &__title {
+    font-weight: 600;
+    @include adaptiv-value("font-size", 38, 28);
+    line-height: 120%;
+    text-transform: capitalize;
+    margin-bottom: rem(10);
+  }
+
+  &__text {
+    font-weight: 400;
+    @include adaptiv-value("font-size", 22, 16);
+    line-height: 160%;
+    text-transform: capitalize;
+    margin-bottom: rem(40);
+  }
+}

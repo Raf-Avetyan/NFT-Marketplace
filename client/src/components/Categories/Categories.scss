@@ -1,0 +1,33 @@
+@import "../../sass/all";
+
+.categories {
+  .categories > &__container {
+    max-width: rem(1050);
+    padding-inline: rem(20);
+    @include adaptiv-value("padding-top", 80, 40);
+    @include adaptiv-value("padding-bottom", 80, 40);
+  }
+
+  &__title {
+    font-weight: 600;
+    @include adaptiv-value("font-size", 38, 28);
+    line-height: 120%;
+    text-transform: capitalize;
+    @include adaptiv-value("margin-bottom", 60, 40);
+
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(150px, 240px));
+    @include adaptiv-value("gap", 30, 15);
+    justify-content: center;
+
+    @media screen and (max-width: 767px) {
+      grid-template-columns: repeat(2, minmax(140px, 240px));
+    }
+  }
+}

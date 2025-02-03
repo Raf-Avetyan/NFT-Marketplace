@@ -1,0 +1,30 @@
+@mixin adaptiv-value($property, $startSize, $minSize, $type: 1) {
+   $addSize: $startSize - $minSize;
+   @if $type==0 {
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
+   } @else {
+      @if $type==1 {
+         #{$property}: $startSize + px;
+         @media (max-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}));
+         }
+      }
+   }
+}
+
+@mixin flex-container($direction, $gap, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin text-styles($font-family, $font-size : 16, $font-weight: 400, $color: #fff, $line-height : 1, $letter-spacing : 0) {
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  color: $color;
+  line-height: $line-height;
+  letter-spacing: $letter-spacing;
+}

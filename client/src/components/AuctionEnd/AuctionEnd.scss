@@ -1,0 +1,196 @@
+@import "../../sass/all";
+
+.auction-end {
+  max-width: 1280px;
+  margin: 0 auto;
+  .auction-end > &__container {
+    max-width: rem(1050);
+    padding-inline: rem(20);
+    @include adaptiv-value("padding-top", 360, 120);
+    @include adaptiv-value("padding-bottom", 60, 40);
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: rem(30);
+
+    position: relative;
+    z-index: 50;
+
+    @media screen and (max-width: 767px) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  background-image: url("/images/jpg/NFT-Highlight.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  @media screen and (max-width: 767px) {
+    background-image: url("/images/jpg/NFT-Highlight_middle.jpg");
+  }
+
+  @media screen and (max-width: 425px) {
+    background-image: url("/images/jpg/NFT-Highlight_small.jpg");
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    background: url("/images/png/NFT-Highlight_bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__left {
+    @media screen and (max-width: 767px) {
+      flex: 1 1 100%;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    @include adaptiv-value("font-size", 51, 38);
+    line-height: 110%;
+    text-transform: capitalize;
+    margin-bottom: rem(30);
+  }
+
+  &__btn {
+    background-color: #ffffff88;
+    min-height: rem(60);
+
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: 140%;
+    text-align: center;
+    color: $background;
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+
+    &:hover {
+      color: #858584;
+      background-color: #2b2b2b99;
+    }
+  }
+
+  &__time {
+    border-radius: rem(20);
+    padding: rem(30);
+    width: rem(295);
+    height: rem(150);
+
+    backdrop-filter: blur(10px);
+    background: rgba(59, 59, 59, 0.5);
+  }
+}
+
+.left-auction-end {
+  &__author {
+    display: flex;
+    align-items: center;
+    column-gap: rem(12);
+    background: $background-secondary;
+    margin-bottom: rem(30);
+    cursor: pointer;
+
+    border-radius: 20px;
+    padding: rem(10) rem(20);
+    width: rem(150);
+
+    overflow: hidden;
+    > img {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+    }
+
+    > span {
+      font-weight: 400;
+      font-size: rem(16);
+      line-height: 140%;
+    }
+  }
+}
+// .primary-btn {
+// }
+.time-auction-end {
+  transition: all .23s ease 0s;
+  &:hover {
+    scale: 1.03;
+  }
+
+  &__title {
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: rem(12);
+    line-height: 110%;
+
+    margin-bottom: rem(10);
+  }
+
+  &__tense {
+    display: flex;
+  }
+}
+.tense-time-auction-end {
+  &__hours {
+    ::after {
+      content: "Hours";
+    }
+  }
+
+  &__minutes {
+    ::after {
+      content: "Minutes";
+    }
+  }
+
+  &__seconds {
+    ::after {
+      content: "Seconds";
+    }
+  }
+
+  & span.tense-time-auction-end__symbol {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: rem(28);
+    line-height: 140%;
+    text-transform: capitalize;
+    margin-inline: rem(10);
+  }
+}
+
+.tense-time-auction-end__time {
+  display: flex;
+  flex-direction: column;
+
+  ::after {
+    display: block;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: rem(12);
+    line-height: 110%;
+  }
+
+  > span:first-child {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size: rem(38);
+    line-height: 120%;
+    text-transform: capitalize;
+  }
+}

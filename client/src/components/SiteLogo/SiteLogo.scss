@@ -1,0 +1,26 @@
+@import '../../sass/all';
+
+.site__logo {
+  font-family: $font-family;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: rem(12);
+  cursor: pointer;
+
+  a {
+    text-decoration: none
+  }
+
+  > img {
+    @include adaptiv-value("width", 32, 24);
+    @include adaptiv-value("height", 32, 24);
+  }
+
+  a span {
+    font-weight: 700;
+    @include adaptiv-value("font-size", 22, 16);
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,36 @@
+@import './../../sass/all';
+
+.primary-btn {
+   font-family: $second-family;
+   font-weight: 600;
+   line-height: 140%;
+   min-height: rem(72);
+   background-color: $call-to-action;
+   border: none;
+   color: #fff;
+   border-radius: rem(20);
+   padding-inline: rem(50);
+   @include adaptiv-value("font-size", 22, 16);
+   @include adaptiv-value("min-height", 72, 46);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: rem(12);
+   transition: all .23s ease 0s;
+   white-space: nowrap;
+
+   > img {
+      width: rem(20);
+      height: rem(20);
+   }
+}
+
+.primary-btn-transparent {
+   background-color: transparent;
+   border: 2px solid $call-to-action;
+   transition: all .23s ease 0s;
+}
+
+.primary-btn:hover, .primary-btn-transparent:hover {
+   background-color: hsl(266, 100%, 63%);
+}

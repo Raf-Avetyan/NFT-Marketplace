@@ -1,0 +1,187 @@
+@import "./../../sass/all";
+
+.get-started {
+  & > .get-started__container {
+    max-width: rem(1050);
+    @include adaptiv-value("padding-block", 80, 40);
+    padding-inline: rem(20);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    column-gap: rem(40);
+
+    @media screen and (max-width: 767px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: rem(40);
+      padding-inline: rem(30);
+    }
+  }
+
+  &__content {
+    max-width: rem(510);
+    @media screen and (min-width: 768px) {
+      animation: get-started__content-anima 1s ease 1;
+    }
+
+  //   @keyframes get-started__content-anima {
+  //     0% {
+  //       opacity: 0;
+  //       transform: translateX(-30%);
+  //     }
+
+  //     100% {
+  //       opacity: 1;
+  //       transform: translateX(0%);
+  //     }
+  //   }
+  // }
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: 110%;
+    text-transform: capitalize;
+    margin-bottom: rem(20);
+    @include adaptiv-value("font-size", 67, 28);
+  }
+
+  &__text {
+    font-weight: 400;
+    line-height: 160%;
+    @media screen and (min-width: 768px) {
+      text-transform: capitalize;
+    }
+    margin-bottom: rem(30);
+    @include adaptiv-value("font-size", 22, 14);
+  }
+
+  &__btn {
+    min-height: rem(60);
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: 140%;
+    text-align: center;
+    margin-bottom: rem(30);
+
+    @media screen and (max-width: 768px) {
+      margin-inline: auto;
+    }
+
+    @media screen and (max-width: 375px) {
+      width: 100%;
+    }
+  }
+
+  &__progress ul {
+    list-style: none;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    @include adaptiv-value("gap", 60, 30);
+
+    @media screen and (max-width: 768px) {
+      justify-content: center;
+    }
+
+    > li span {
+      display: block;
+      white-space: nowrap;
+    }
+
+    > li span.progress-get-started__amount {
+      font-family: $font-family;
+      font-weight: 700;
+      line-height: 140%;
+      text-transform: capitalize;
+      @include adaptiv-value("font-size", 28, 22);
+    }
+
+    > li span.progress-get-started__name {
+      font-family: $second-family;
+      font-weight: 400;
+      line-height: 160%;
+      text-transform: capitalize;
+      @include adaptiv-value("font-size", 23, 16);
+    }
+  }
+
+  &__right {
+    @media screen and (min-width: 767px) {
+      animation: get-started__right-anima 1s ease 1;
+    }
+    &.hidden {
+      display: none;
+      @media screen and (max-width: 767px) {
+        display: block;
+        margin-bottom: rem(40);
+      }
+    }
+
+    // @keyframes get-started__right-anima {
+    //   0% {
+    //     opacity: 0;
+    //     transform: translateX(30%);
+    //   }
+
+    //   100% {
+    //     opacity: 1;
+    //     transform: translateX(0%);
+    //   }
+    // }
+
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+
+    .right-get-started__image {
+      overflow: hidden;
+      @include adaptiv-value("border-top-left-radius", 0, 20);
+      @include adaptiv-value("border-top-right-radius", 0, 20);
+      @media screen and (min-width: 768px) {
+        min-width: rem(330);
+      }
+      > img {
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+        height: 100%;
+        transition: all 0.23s ease 0s;
+
+        &:hover {
+          scale: 1.03;
+        }
+      }
+    }
+
+    &-bottom {
+      padding: rem(20);
+      background-color: $background-secondary;
+      border-radius: 0 0 rem(20) rem(20);
+
+      .right-get-started__desc {
+        font-family: $second-family;
+        font-weight: 600;
+        font-size: rem(22);
+        line-height: 140%;
+        text-transform: capitalize;
+        margin-bottom: rem(10);
+      }
+      .right-get-started__user {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        column-gap: rem(12);
+
+        .user-right-get-started__avatar {
+          width: rem(24);
+          height: rem(24);
+        }
+        //   .user-right-get-started__name {
+        //   }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+@import "../../sass/all";
+
+.start-of-work {
+  .start-of-work > &__container {
+    max-width: rem(1050);
+    padding-inline: rem(20);
+    @include adaptiv-value("padding-block", 80, 40);
+  }
+  &__title {
+    font-weight: 600;
+    @include adaptiv-value("font-size", 38, 28);
+    line-height: 120%;
+    text-transform: capitalize;
+    margin-bottom: rem(10);
+  }
+
+  &__text {
+    font-weight: 400;
+    @include adaptiv-value("font-size", 22, 16);
+    line-height: 160%;
+    text-transform: capitalize;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(210px, 330px));
+    @include adaptiv-value("column-gap", 30, 20);
+    justify-content: center;
+    row-gap: rem(20);
+
+    @include adaptiv-value("margin-top", 50, 40);
+
+    @media screen and (max-width: 767px) {
+      grid-template-columns: repeat(1, minmax(290px, 500px));
+    }
+  }
+}

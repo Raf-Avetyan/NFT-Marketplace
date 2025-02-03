@@ -1,0 +1,180 @@
+@import './functions';
+
+// НАСТРОЙКИ-------------------------------------------------------------------------------------
+// Минимальная ширина страницы
+$minWidth: 320;
+// Ширина макета
+$maxWidth: 1920;
+// Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1050;
+// Общий отступ у контейнера
+// (30 = по 15px слева и справа, 0 = нет отступа)
+$containerPadding: 30;
+
+// ---------------- Project variables, colors, and general classes -------------------
+
+// Font-Familes
+$font-family: "Space Mono", sans-serif;
+$second-family: "Work Sans", sans-serif;
+$fontSize: rem(16);
+$fontWeight: 400;
+$lineHeight: 140%;
+
+// Colors and Backgrounds
+$background: #2b2b2b;
+$background-secondary: #3b3b3b;
+$caption-and-label-text: #858584;
+$text: #fff;
+$call-to-action: #a259ff;
+$blue-accent: #377df7;
+$red-accent: #ff7262;
+$gold-accent: rgb(255, 215, 0);
+
+// Linear-Gradients
+$linear-gradient: linear-gradient(170deg, #a259ff 0%, #377df7 100%);
+$linear-gradient-second: linear-gradient(149deg, #a259ff 0%, #ff6250 100%);
+
+// ----------------------------- Custom Colors --------------------------------
+$custom-blue: #0d6efd;
+$custom-indigo: #6610f2;
+$custom-purple: #6f42c1;
+$custom-pink: #d63384;
+$custom-red: #dc3545;
+$custom-orange: #fd7e14;
+$custom-yellow: #ffc107;
+$custom-green: #198754;
+$custom-teal: #20c997;
+$custom-cyan: #0dcaf0;
+$custom-black: #000;
+$custom-white: #fff;
+$custom-gray: #6c757d;
+$custom-gray-dark: #343a40;
+$custom-gray-100: #f8f9fa;
+$custom-gray-200: #e9ecef;
+$custom-gray-300: #dee2e6;
+$custom-gray-400: #ced4da;
+$custom-gray-500: #adb5bd;
+$custom-gray-600: #6c757d;
+$custom-gray-700: #495057;
+$custom-gray-800: #343a40;
+$custom-gray-900: #212529;
+$custom-primary: #0d6efd;
+$custom-secondary: #6c757d;
+$custom-success: #198754;
+$custom-info: #0dcaf0;
+$custom-warning: #ffc107;
+$custom-danger: #dc3545;
+$custom-light: #f8f9fa;
+$custom-dark: #212529;
+$custom-primary-rgb: rgb(13, 110, 253);
+$custom-secondary-rgb: rgb(108, 117, 125);
+$custom-success-rgb: rgb(25, 135, 84);
+$custom-info-rgb: rgb(13, 202, 240);
+$custom-warning-rgb: rgb(255, 193, 7);
+$custom-danger-rgb: rgb(220, 53, 69);
+$custom-light-rgb: rgb(248, 249, 250);
+$custom-dark-rgb: rgb(33, 37, 41);
+$custom-primary-text-emphasis: #052c65;
+$custom-secondary-text-emphasis: #2b2f32;
+$custom-success-text-emphasis: #0a3622;
+$custom-info-text-emphasis: #055160;
+$custom-warning-text-emphasis: #664d03;
+$custom-danger-text-emphasis: #58151c;
+$custom-light-text-emphasis: #495057;
+$custom-dark-text-emphasis: #495057;
+$custom-primary-bg-subtle: #cfe2ff;
+$custom-secondary-bg-subtle: #e2e3e5;
+$custom-success-bg-subtle: #d1e7dd;
+$custom-info-bg-subtle: #cff4fc;
+$custom-warning-bg-subtle: #fff3cd;
+$custom-danger-bg-subtle: #f8d7da;
+$custom-light-bg-subtle: #fcfcfd;
+$custom-dark-bg-subtle: #ced4da;
+$custom-primary-border-subtle: #9ec5fe;
+$custom-secondary-border-subtle: #c4c8cb;
+$custom-success-border-subtle: #a3cfbb;
+$custom-info-border-subtle: #9eeaf9;
+$custom-warning-border-subtle: #ffe69c;
+$custom-danger-border-subtle: #f1aeb5;
+$custom-light-border-subtle: #e9ecef;
+$custom-dark-border-subtle: #adb5bd;
+$custom-white-rgb: rgb(255, 255, 255);
+$custom-black-rgb: rgb(0, 0, 0);
+$custom-body-color: #212529;
+$custom-body-color-rgb: rgb(33, 37, 41);
+$custom-body-bg: #fff;
+$custom-body-bg-rgb: rgb(255, 255, 255);
+$custom-emphasis-color: #000;
+$custom-emphasis-color-rgb: rgb(0, 0, 0);
+$custom-secondary-color: rgba(33, 37, 41, 0.75);
+$custom-secondary-color-rgb: rgb(33, 37, 41);
+$custom-secondary-bg: #e9ecef;
+$custom-secondary-bg-rgb: rgb(233, 236, 239);
+$custom-tertiary-color: rgba(33, 37, 41, 0.5);
+$custom-tertiary-color-rgb: rgb(33, 37, 41);
+$custom-tertiary-bg: #f8f9fa;
+$custom-tertiary-bg-rgb: rgb(248, 249, 250);
+$custom-link-color: #0d6efd;
+$custom-link-color-rgb: rgb(13, 110, 253);
+$custom-link-hover-color: #0a58ca;
+$custom-link-hover-color-rgb: rgb(10, 88, 202);
+$custom-code-color: #d63384;
+$custom-highlight-color: #212529;
+$custom-highlight-bg: #fff3cd;
+$custom-border-color: #dee2e6;
+$custom-focus-ring-color: rgba(13, 110, 253, 0.25);
+$custom-form-valid-color: #198754;
+$custom-form-valid-border-color: #198754;
+$custom-form-invalid-color: #dc3545;
+$custom-form-invalid-border-color: #dc3545;
+$custom-body-color: #dee2e6;
+$custom-body-color-rgb: rgb(222, 226, 230);
+$custom-body-bg: #212529;
+$custom-body-bg-rgb: rgb(33, 37, 41);
+$custom-emphasis-color: #fff;
+$custom-emphasis-color-rgb: rgb(255, 255, 255);
+$custom-secondary-color: rgba(222, 226, 230, 0.75);
+$custom-secondary-color-rgb: rgb(222, 226, 230);
+$custom-secondary-bg: #343a40;
+$custom-secondary-bg-rgb: rgb(52, 58, 64);
+$custom-tertiary-color: rgba(222, 226, 230, 0.5);
+$custom-tertiary-color-rgb: rgb(222, 226, 230);
+$custom-tertiary-bg: #2b3035;
+$custom-tertiary-bg-rgb: rgb(43, 48, 53);
+$custom-primary-text-emphasis: #6ea8fe;
+$custom-secondary-text-emphasis: #a7acb1;
+$custom-success-text-emphasis: #75b798;
+$custom-info-text-emphasis: #6edff6;
+$custom-warning-text-emphasis: #ffda6a;
+$custom-danger-text-emphasis: #ea868f;
+$custom-light-text-emphasis: #f8f9fa;
+$custom-dark-text-emphasis: #dee2e6;
+$custom-primary-bg-subtle: #031633;
+$custom-secondary-bg-subtle: #161719;
+$custom-success-bg-subtle: #051b11;
+$custom-info-bg-subtle: #032830;
+$custom-warning-bg-subtle: #332701;
+$custom-danger-bg-subtle: #2c0b0e;
+$custom-light-bg-subtle: #343a40;
+$custom-dark-bg-subtle: #1a1d20;
+$custom-primary-border-subtle: #084298;
+$custom-secondary-border-subtle: #41464b;
+$custom-success-border-subtle: #0f5132;
+$custom-info-border-subtle: #087990;
+$custom-warning-border-subtle: #997404;
+$custom-danger-border-subtle: #842029;
+$custom-light-border-subtle: #495057;
+$custom-dark-border-subtle: #343a40;
+$custom-link-color: #6ea8fe;
+$custom-link-hover-color: #8bb9fe;
+$custom-link-color-rgb: rgb(110, 168, 254);
+$custom-link-hover-color-rgb: rgb(139, 185, 254);
+$custom-code-color: #e685b5;
+$custom-highlight-color: #dee2e6;
+$custom-highlight-bg: #664d03;
+$custom-border-color: #495057;
+$custom-border-color-translucent: rgba(255, 255, 255, 0.15);
+$custom-form-valid-color: #75b798;
+$custom-form-valid-border-color: #75b798;
+$custom-form-invalid-color: #ea868f;
+$custom-form-invalid-border-color: #ea868f;

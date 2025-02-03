@@ -1,0 +1,50 @@
+@import "../../../sass/all";
+
+.body-join-form {
+  &__input-area {
+    position: relative;
+  }
+
+  &__input {
+    border: 1px solid $caption-and-label-text;
+    border-radius: rem(20);
+    padding: rem(16) rem(20);
+    border: 1px solid $caption-and-label-text;
+    width: 100%;
+    min-height: rem(60);
+
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: 140%;
+    color: $background;
+    outline: none;
+    padding-right: rem(165);
+
+    @media screen and (max-width: 990px) {
+      min-height: rem(50);
+      padding-right: rem(40);
+      padding-block: 0;
+    }
+  }
+
+  &__btn {
+    min-height: rem(60);
+    padding: 0px 50px;
+    position: absolute;
+    max-width: 160px;
+    right: 0;
+    top: 0;
+
+    font-weight: 600;
+    font-size: rem(16);
+    line-height: 140%;
+    text-align: center;
+
+    @media screen and (max-width: 990px) {
+      position: relative;
+      min-width: 100%;
+      min-height: rem(50);
+      margin-top: rem(16);
+    }
+  }
+}

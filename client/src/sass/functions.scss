@@ -1,0 +1,16 @@
+@use "sass:math";
+
+@function rem($px-1, $px-2: 16) {
+   $result: calc($px-1 / $px-2) + rem;
+   @return $result;
+}
+
+@function em($px-1, $px-2: 16) {
+   $result: calc($px-1 / $px-2) + em;
+   @return $result;
+}
+
+@function prc($px-1, $px-2: 16) {
+   $result: calc($px-1 / $px-2) * 100%;   
+   @return $result;
+}

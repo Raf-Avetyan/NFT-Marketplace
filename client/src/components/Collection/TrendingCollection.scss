@@ -1,0 +1,45 @@
+@import "../../sass/all";
+
+.trending-collection {
+  @include adaptiv-value("padding-block", 80, 40);
+
+  & .trending-collection__container {
+    padding-inline: rem(20);
+    max-width: rem(1050);
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    column-gap: rem(30);
+
+    @media screen and (max-width: 1024px) {
+      .collection-body:nth-child(3) {
+        display: none;
+      }
+    }
+    @media screen and (max-width: 667px) {
+      .collection-body:nth-child(2) {
+        display: none;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 38px;
+    @include adaptiv-value("font-size", 38, 28);
+    line-height: 120%;
+    text-transform: capitalize;
+    margin-bottom: rem(10);
+  }
+
+  &__text {
+    font-weight: 400;
+    @include adaptiv-value("font-size", 22, 16);
+    line-height: 160%;
+    @include adaptiv-value("margin-bottom", 60, 40);
+  }
+}

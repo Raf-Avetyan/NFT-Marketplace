@@ -1,0 +1,80 @@
+@import "../../sass/all";
+
+.trend-nfts {
+  .trend-nfts > &__container {
+    max-width: rem(1050);
+    padding-inline: rem(20);
+
+    @include adaptiv-value("padding-top", 60, 40);
+    @include adaptiv-value("padding-bottom", 80, 60);
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: rem(50);
+
+    // .top-trend-nfts__left {
+    // }
+  }
+  .top-trend-nfts {
+    &__title {
+      font-weight: 600;
+      @include adaptiv-value("font-size", 38, 28);
+      line-height: 120%;
+      text-transform: capitalize;
+      margin-bottom: rem(10);
+    }
+
+    &__text {
+      font-weight: 400;
+      @include adaptiv-value("font-size", 22, 16);
+      line-height: 160%;
+      text-transform: capitalize;
+    }
+    &__btn {
+      min-height: rem(60);
+
+      font-weight: 600;
+      font-size: rem(16);
+      line-height: 140%;
+      text-align: center;
+
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
+
+      &:hover {
+        background-color: rgba(161, 89, 255, 0.0941176471);
+      }
+    }
+
+    &__btn-hide {
+      display: none;
+      @media screen and (max-width: 767px) {
+        display: flex;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(230px, 330px));
+    justify-content: center;
+    @include adaptiv-value("column-gap", 30, 20);
+    @include adaptiv-value("row-gap", 30, 20);
+
+    @include adaptiv-value("padding-top", 60, 40);
+    @include adaptiv-value("padding-bottom", 80, 40);
+
+    @media screen and (max-width: 850px) {
+      grid-template-columns: repeat(2, minmax(230px, 330px));
+    }
+
+    @media screen and (max-width: 576px) {
+      grid-template-columns: repeat(1, minmax(280px, 330px));
+    }
+  }
+}

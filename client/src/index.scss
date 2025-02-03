@@ -1,0 +1,66 @@
+@use "sass:math";
+@import url(https://fonts.googleapis.com/css?family=Space+Mono:regular,700);
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:regular,600);
+
+@import './sass/all';
+
+body {
+   max-width: 1280px;
+   scroll-behavior: smooth;
+   font-family: $second-family;
+   font-weight: $fontWeight;
+   font-size: $fontSize + px;
+   line-height: $lineHeight;
+   background-color: $background;
+   overflow-x: hidden;
+   color: $text;
+   padding: 0;
+   margin: 0 auto;
+   // Скролл заблокирован
+   &.lock {
+      overflow: hidden;
+      touch-action: none;
+   }
+}
+
+// Custom Page Scroll-------------------------------------------------------------------
+body::-webkit-scrollbar-thumb {
+   border-radius: 4px;
+   background-color: hsla(266, 100%, 74%, 0.3);
+}
+
+body::-webkit-scrollbar-track {
+   -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+   background-color: transparent;
+}
+
+body::-webkit-scrollbar {
+   width: 8px;
+}
+
+// Оболочка-------------------------------------------------------------------------------------
+#wrapper {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   // Сайт загружен
+   > main {
+      flex: 1 1 auto;
+   }
+   // Файл для слайдеров
+   > * {
+      min-height: 0;
+   }
+}
+
+[class*="__container"] {
+   @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+      margin: 0 auto;
+   }
+   @if ($containerPadding>0) {
+      padding: 0 rem(math.div($containerPadding, 2));
+   }
+}
